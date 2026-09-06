@@ -1,0 +1,35 @@
+!Reference Parameter File for Processing of Docking Poses in SDF
+!Comment out by !
+!-----------------------------------------------------------------------------------------------------
+RMSD             1.0            !Remove redundant poses within a RMSD threshold
+
+!H-Bonding to the protein or pocket filling by SMARTS-defined structural motif
+!SMARTS dist x y z      !within a distance of a protein atom or position (Cartesian coordinates x,y,z)
+!-----------------------------------------------------------------------------------------------------
+[O,n&X2]         2.6     15.920   5.552  12.530 !Acceptor to the hinge
+![O,n,N;H,H2,H3] 3.6     0       0       0      !Donor
+[a]              3       7.765   1.203  13.027  !aromatic in the back-site
+
+!Allowed dihedrals
+!Line starts with Dihedral | SMARTS defined torsion | allowed range from -180 to 180 degrees
+!-----------------------------------------------------------------------------------------------------
+!Dihedral [!#1][$([SR0](=O)=O)][a][a] 50 130 -130 -50                      !sulfonylaryl
+!Dihedral [C,N;X4][CX4R0;H1,H2][a][c] 50 130 -130 -50                      !allylic strain
+!Dihedral [!#1][C,N;X4R0][C,N;X4][!#1] 30 90 150 180 -90 -30 -180 -150     !sp3-sp3 strain
+
+!LeDock specific paramters
+!-----------------------------------------------------------------------------------------------------
+Score              -7.0
+!xLE                 0.5
+WithinTopScore       0.0
+!VDW               -30.0
+!Strain             12.0
+!HBond              -6.0
+!Elec                .0
+!IntraClash        12.0
+!Torsion           12.0
+
+!Clustering by maximum common substruture ranging from 0 to 1 being identical
+!Could take very long for more than 1000 compounds of big size
+!-----------------------------------------------------------------------------------------------------
+!ClusterByMCS 0.8               

@@ -1,0 +1,77 @@
+!http://www.lephar.com
+!Comment out by !
+
+!Descriptors Lower_limit Upper_limit
+!-----------------------------------------------------
+HeavyAtomCount 10 30
+MolLogP	-3.5 3.5
+NumHAcceptors 0 10 
+NumHDonors 0 5
+NumHeteroatoms 2 10
+NumRotatableBonds 0 7
+NumChiralCenters 0 2
+RingCount 2 4 
+NOCount 1 10
+!TPSA 0 999
+!FractionCSP3 0 1
+!NumAromaticRings 0 99 
+!NumSaturatedRings 0 99
+!NumAliphaticRings 0 99
+!NumAromaticHeterocycles 0 99
+!NumSaturatedHeterocycles 0 99
+!NumAliphaticHeterocycles 0 99
+!NumAromaticCarbocycles 0 99
+!NumSaturatedCarbocycles 0 99
+!NumAliphaticCarbocycles 0 99
+
+!Functional_groups Lower_limit Upper_limit
+!------------------------------------------------------
+!Desired functional groups
+
+
+!------------------------------------------------------ 
+!Limited functional groups
+[F,Cl] 0 4 !F+Cl count
+[C;!R]([CH3])([CH3])[CH3] 0 1 !t-butyl
+[#6]C(=O)[O;!R;D2] 0 2 !acyclic ester excluding carbamate
+
+
+!------------------------------------------------------
+!Undesired functional groups
+[Br] 0 0 !bromine
+[I]  0 0 !iodine
+[B]  0 0 !boron
+[P]  0 0 !phosphor
+[D2;!R][D2;!R][D2;!R][D2;!R] 0 0 !aliphatic long chain at a length of 4
+[N;!R](~O)~O 0 0 !nitro/nitrate
+n[OH] 0 0 !N-hydroxyl pyridine
+[#6]=S 0 0 !Thiocarbonyl
+SC=O 0 0 !thioester
+[r8] 0 0
+[N;!R]=[N;!R] 0 0
+
+!------------------------------------------------------
+!Reactive 
+n1c([F,Cl,Br,I])cccc1 0 0 !2-halo pyridine
+[CH]=O 0 0 !aldehyde
+C(=O)[F,Cl,Br,I] 0 0 !acid halide
+C=[C;!R]O 0 0 !enol (ether)
+N#CC=O 0 0 !acyl cyanide
+C(=O)N[NH2,NH3] 0 0 !acyl hydrazine
+[CX4][Cl,Br,I] 0 0 !alkyl halide
+N=[N+]=[N-] 0 0 !azido 
+N#N 0 0 !azo
+[#6](=O)[#6](=O) 0 0 !diketo
+[#6+,#6-] 0 0 !carbo cation or anion
+C=[C;!R]C#N 0 0 !conjugated nitrile group
+[N,O,S]C#N 0 0 !aminonitrile/cyanate/thiocyanate
+[c,C]=[N;!R] 0 0 !imine
+N=C=O 0 0 !isocyanate
+N=C=S 0 0 !isothiocyanate
+C=!@CC=[O,S] 0 0 !Michael acceptor
+C=[C!R][NX3R0] 0 0 !enamine
+
+
+
+
+
